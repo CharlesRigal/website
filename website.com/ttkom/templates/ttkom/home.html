@@ -1,1 +1,41 @@
-{% include "ttkom/base.html" %}
+{% extends "ttkom/base.html" %}
+{% load static %}
+{% block title %}Le Blog{% endblock %}
+{% block picture %}{% static "ttkom/img/home_bg.jpg" %}{% endblock %}
+{% block head_title %}Blog TTKOM{% endblock %}
+{% block subheading %}Le blog fais par la force des chose{% endblock subheading %}
+{% block content %}
+   <!-- Main Content -->
+   <div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            {% for post in posts %}
+                <div class="post-preview">
+                    <a href="#">
+                        <h2 class="post-title">
+                            {{ post.name }}
+                        </h2>
+                        <h3 class="post-subtitle">
+                            {{ post.content|truncatewords:10 }}
+                        </h3>
+                    </a>
+                    <p class="post-meta">
+                        Poster par
+                        <a href="#">
+                            {{ post.author }}
+                        </a>
+                        le {{ post.date_post }}
+                    </p>
+                </div>
+                <hr>
+            {% empty %}
+                <div class="post-preview">
+                    <h2 class="post-title"> Il semblerait qu'il ny a pas de post sur le site ... </h2>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+<hr>
+{% endblock content %}

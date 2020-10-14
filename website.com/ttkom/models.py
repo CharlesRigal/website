@@ -10,5 +10,9 @@ class Post(models.Model):
     date_post = models.DateTimeField()
     likes = models.ManyToManyField(User, blank=True, related_name="blog_post")
 
+    @property
+    def total_likes(self):
+        return self.likes.count()
+
     def __str__(self):
         return self.name

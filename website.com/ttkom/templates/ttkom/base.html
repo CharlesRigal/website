@@ -5,10 +5,10 @@
 		<link rel="icon" href="{% static 'ttkom/img/favicon.ico' %}" />
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="description" content="un site test pour apprendre le dev de site web">
-		<meta name="author" content="Alloy">
+		<meta name="description" content="a test website for learn a web developement">
+		<meta name="author" content="Charles_Rigal">
 
-		<title>{% block title %}@titre_de_la_page{% endblock %}</title>
+		<title>{% block title %} @titre_de_la_page {% endblock %}</title>
 
 		<!-- Bootstrap core CSS -->
 		<link href="{% static 'ttkom/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -59,7 +59,7 @@
 			</div>
 		</nav>
 		<!-- Page Header -->
-		<header class="masthead" style="background-image: url("{% block image %}@image{% endblock image %}")">
+		<header class="masthead" style="background-image: url('{% block picture %} @image_name {% endblock %}')">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row">
@@ -100,7 +100,7 @@
 				</a>
 				</li>
 				<li class="list-inline-item">
-				<a href="#">
+				<a href="https://github.com/CharlesRigal/website">
 					<span class="fa-stack fa-lg">
 					<i class="fas fa-circle fa-stack-2x"></i>
 					<i class="fab fa-github fa-stack-1x fa-inverse"></i>

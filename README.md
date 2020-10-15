@@ -16,8 +16,10 @@ Command ligne for installing dependencies:
 
 Fonctionaliter:
 
--Commenter et Liker un post
+- Commenter et Liker un post
 
--Crée un post pour les admin
+- Crée un post pour les admin
 
 - Connection Déconnection
+
+- Inscription avec validation du mail

@@ -19,6 +19,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
 		<!-- Custom styles for this template -->
+		<link href="{% static 'ttkom/css/style.css' %}" rel="stylesheet">
 		<link href="{% static 'ttkom/css/clean-blog.min.css' %}" rel="stylesheet">
 
 	</head>
@@ -44,11 +45,11 @@
 								<a class="nav-link" href="#">compte</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">déconnection</a>
+								<a class="nav-link" href="{% url 'logout' %}">déconnection</a>
 							</li>
 						{% else %}
 							<li class="nav-item">
-								<a class="nav-link" href="#">Connexion</a>
+								<a class="nav-link" href="{% url 'login' %}">Connexion</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="#">Register</a>
@@ -67,6 +68,7 @@
 						<div class="site-heading">
 							<h1>{% block head_title %}@head_title{% endblock head_title %}</h1>
 							<span class="subheading">{% block subheading %}@subheading{% endblock %}</span>
+							{% block header_option %}{% endblock %}
 						</div>
 					</div>
 				</div>

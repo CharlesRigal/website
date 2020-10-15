@@ -1,0 +1,22 @@
+{% extends "ttkom/base.html" %}
+{% load static %}
+{% block title %}Authentification{% endblock %}
+{% block picture %}{% static "ttkom/img/login_bg.jpg" %}{% endblock %}
+{% block head_title %}Page de Connexion{% endblock %}
+{% block subheading %}Connectes toi pour être au courant{% endblock %}
+{% block header_option %}<a href="#form" class="scroll-down"></a>{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <form action="{% url 'login' %}#form" id="form" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit">
+                    <p><a href="#">mot de pass oublier</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <hr>
+{% endblock %}

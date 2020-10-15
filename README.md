@@ -15,5 +15,7 @@ Command ligne for installing dependencies:
 
 
 Fonctionaliter:
-	-Commenter et Liker un post
-	-Crée un post pour les admin
+
+-Commenter et Liker un post
+
+-Crée un post pour les admin

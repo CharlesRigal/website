@@ -16,3 +16,11 @@ class Post(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Comment(models.Model):
+    fk_author = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    fk_post = models.ForeignKey(Post, on_delete=models.DO_NOTHING)
+    content = models.TextField()
+    date_comment = models.DateTimeField(auto_now_add=True)
+    likes = models.ManyToManyField(User, related_name="blog_comment")

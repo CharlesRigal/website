@@ -1,0 +1,68 @@
+{% extends "ttkom/base.html" %}
+{% load static %}
+{% block title %}le hi blog{% endblock %}
+{% block image %}url('{% static "ttkom/img/home_bg.jpg" %}'){% endblock %}
+{% block page_title %}{{ post.name }}{% endblock %}
+{% block subheading %}rédiger par {{ post.user.username }} le {{ post.date_post|date }}{% endblock %}
+{% block content %}
+    <!-- Main Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    {{ post.content }}
+                    <hr>
+                    <h4>Likes : {{ post.total_likes }}</h4>
+                    {% if user.is_authenticated %}
+                        <form id="form_2" action="{% url 'like_post' post.pk %}" method="POST">
+                            {% csrf_token %}
+                            <button onkeyup=like(this) type="submit", name="post_id", value="{{ post.id }}" class="btn-primary">
+                                <i class="fas fa-thumbs-up">likes</i>
+                            </button>
+                        </form>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </article>
+    <hr>
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    {% if user.is_authenticated %}
+                    <form id="form" method="post">
+                        {% csrf_token %}
+                        {{ form }}
+                        <input type="submit">
+                    </form>
+                    {% else %}
+                        connecte toi pour commenter
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <hr>
+    </article>
+    <article>
+        {% for comment in comments %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <h5>Commentaire écrit par: {{ comment.fk_author.username }} poster le {{ comment.date_comment|date }} </h5>
+                        {{ comment.content }}
+                    </div>
+                </div>
+            <hr>
+            </div>
+        {% endfor %}
+    </article>
+    <hr>
+{% endblock %}
+{% block javascript %}
+    function like(button_like){
+        $.ajax({
+            url : "{% url "like_post" post.pk %}"
+        }
+    }
+{% endblock %}

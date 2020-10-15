@@ -52,7 +52,7 @@
 								<a class="nav-link" href="{% url 'login' %}">Connexion</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">Register</a>
+								<a class="nav-link" href="{% url 'register' %}">S'inscrire</a>
 							</li>
 						{% endif %}
 					</ul>
@@ -68,7 +68,7 @@
 						<div class="site-heading">
 							<h1>{% block head_title %}@head_title{% endblock head_title %}</h1>
 							<span class="subheading">{% block subheading %}@subheading{% endblock %}</span>
-							{% block header_option %}{% endblock %}
+							{% block header_option_repare %}{% endblock %}
 						</div>
 					</div>
 				</div>

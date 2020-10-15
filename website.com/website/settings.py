@@ -23,6 +23,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = codepass.SECRET_KEY
 
+
+# Email setting
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'rcserveur@gmail.com'
+EMAIL_HOST_PASSWORD = codepass.EMAIL_HOST_PASSWORD
+EMAIL_PORT = 587
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 

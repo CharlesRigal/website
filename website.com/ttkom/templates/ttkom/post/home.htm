@@ -2,7 +2,13 @@
 {% load static %}
 {% block title %}Le Blog{% endblock %}
 {% block picture %}{% static "ttkom/img/home_bg.jpg" %}{% endblock %}
-{% block head_title %}Blog TTKOM{% endblock %}
+{% block head_title %}
+    {% if user.is_authenticated %}
+        Bienvenue {{ user.username }}
+    {% else %}
+        Blog TTKOM
+    {% endif %}
+{% endblock %}
 {% block subheading %}Le blog fais par la force des chose{% endblock subheading %}
 {% block content %}
    <!-- Main Content -->
@@ -30,7 +36,7 @@
                 <hr>
             {% empty %}
                 <div class="post-preview">
-                    <h2 class="post-title"> Il semblerait qu'il ny a pas de post sur le site ... </h2>
+                    <h2 class="post-title"> Il semblerait qu'il n'y a pas de post sur le site ... </h2>
                 </div>
             {% endfor %}
 

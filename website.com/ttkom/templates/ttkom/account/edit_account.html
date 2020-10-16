@@ -1,0 +1,22 @@
+{% extends "ttkom/base.html" %}
+{% load static %}
+{% block title %}compte de {{ user.username }}{% endblock %}
+{% block picture %}{% static 'ttkom/img/edit_account_bg.jpg' %}{% endblock %}
+{% block head_title %}Votre compte{% endblock %}
+{% block subheading %}Éditer les zone de text et valider pour changer les informations{% endblock %}
+{% block content %}
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <h1>Vos informations</h1>
+                <form action="/compte/#form" id="form" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="valider">
+                </form>
+                lien pour changer le mot de pass: <a href="{% url 'password_change' %}">clicker ici</a>
+            </div>
+        </div>
+    </div>
+    <hr>
+{% endblock %}

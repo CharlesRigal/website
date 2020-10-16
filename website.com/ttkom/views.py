@@ -4,12 +4,25 @@ from django.contrib.sites.shortcuts import get_current_site
 from .tokens import account_activation_token
 from django.utils.encoding import force_bytes, force_text
 from django.utils import timezone
-from .forms import CommentForm, RegisterForm
+from .forms import CommentForm, RegisterForm, ChangeForm
 from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.urls import reverse
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+
+
+@login_required(login_url="/connextion/")
+def account(request):
+    form = ChangeForm(request.POST or None, instance=request.user)
+    if request.POST and form.is_valid():
+        form.save()
+
+    context = {
+        'form': form,
+    }
+    return render(request, "ttkom/account/edit_account.html", context=context)
 
 
 def activate(request, uidb64, token):

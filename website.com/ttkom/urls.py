@@ -1,9 +1,15 @@
 from django.contrib.auth import views as auth_views
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, reverse_lazy
 from . import views
 
 urlpatterns = [
+
+    # edit account
+    path("compte/", views.account, name="edit_account"),
+    path("changer_le_mdp/", auth_views.PasswordChangeView.as_view(
+        success_url=reverse_lazy("login"),
+    ), name="password_change"),
 
     # register
     path("S\'inscrire/", views.register_view, name="register"),

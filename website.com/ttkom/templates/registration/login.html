@@ -13,7 +13,7 @@
                     {% csrf_token %}
                     {{ form.as_p }}
                     <input type="submit" value="Connextion">
-                    <p><a href="#">mot de pass oublier</a></p>
+                    <p><a href="{% url 'password_reset' %}">mot de pass oublier</a></p>
                 </form>
             </div>
         </div>

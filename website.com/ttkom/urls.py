@@ -4,6 +4,12 @@ from django.urls import path, reverse_lazy
 from . import views
 
 urlpatterns = [
+    
+    # password recovery
+    path("reinitialiser_le_mot_de_pass/", auth_views.PasswordResetView.as_view(), name="password_reset"),
+    path("reinitialiser_le_mot_de_pass/valider/", auth_views.PasswordResetDoneView.as_view(), name="password_reset_done"),
+    path('reinitialiser/<str:uidb64>/<str:token>/', auth_views.PasswordResetConfirmView.as_view(), name="password_reset_confirm"),
+    path('reinitialiser/valider/', auth_views.PasswordResetCompleteView.as_view(), name="password_reset_complete"),
 
     # edit account
     path("compte/", views.account, name="edit_account"),

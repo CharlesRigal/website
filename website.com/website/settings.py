@@ -23,6 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = codepass.SECRET_KEY
 
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 
 # Email setting
 EMAIL_USE_TLS = True
@@ -31,9 +33,8 @@ EMAIL_HOST_USER = 'rcserveur@gmail.com'
 EMAIL_HOST_PASSWORD = codepass.EMAIL_HOST_PASSWORD
 EMAIL_PORT = 587
 
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ALLOWED_HOSTS = []
 

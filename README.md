@@ -23,3 +23,5 @@ Fonctionaliter:
 - Connection Déconnection
 
 - Inscription avec validation du mail
+
+- Edition du compte pour l'utilisateur avec changement de mot de pass

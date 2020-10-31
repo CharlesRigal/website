@@ -27,7 +27,7 @@
                     </a>
                     <p class="post-meta">
                         Poster par
-                        <a href="#">
+                        <a href="{% url 'detail_user' post.author.pk %}">
                             {{ post.author }}
                         </a>
                         le {{ post.date_post }}

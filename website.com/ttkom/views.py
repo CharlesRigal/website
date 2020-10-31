@@ -11,6 +11,12 @@ from django.urls import reverse
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.views.generic import DetailView
+
+
+class DetailUser(DetailView):
+    model = User
+    context_object_name = "user"
 
 
 @login_required(login_url="/connextion/")
@@ -99,4 +105,4 @@ def index(request):
         "posts": posts,
         "msg": msg,
     }
-    return render(request, "ttkom/post/home.htm", context=data)
+    return render(request, "ttkom/post/home.html", context=data)

@@ -2,8 +2,8 @@
 {% load static %}
 {% block title %}le hi blog{% endblock %}
 {% block image %}url('{% static "ttkom/img/home_bg.jpg" %}'){% endblock %}
-{% block page_title %}{{ post.name }}{% endblock %}
-{% block subheading %}rédiger par {{ post.user.username }} le {{ post.date_post|date }}{% endblock %}
+{% block head_title %}{{ post.name }}{% endblock %}
+{% block subheading %}rédiger par <a href="{% url 'detail_user' post.author.pk %}">{{ post.author.username }}</a> le {{ post.date_post|date }}{% endblock %}
 {% block content %}
     <!-- Main Content -->
     <article>
@@ -62,7 +62,8 @@
 {% block javascript %}
     function like(button_like){
         $.ajax({
-            url : "{% url "like_post" post.pk %}"
+            url : "{% url "like_post" post.pk %}",
+            value: "$this.value"
         }
     }
 {% endblock %}

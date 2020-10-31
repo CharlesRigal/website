@@ -1,20 +1,22 @@
 
-ttkom blog open source
+# ttkom blog open source
 
-- python3
-- Django 3.1 
+python3
+Django 3.1 
 
 password cripted in argon2
 
 
+## Installation
+
+required
+
 Command ligne for installing dependencies:
-	"python3 -m pip install django[argon2]"
-	 # for encript password
-	"python3 -m pip django-utils-six"
-	# for create token
+'''bash
+python3 -m pip install django[argon2]
+python3 -m pip django-utils-six
 
-
-Fonctionaliter:
+## Fonctionaliter:
 
 - Commenter et Liker un post
 
@@ -25,3 +27,9 @@ Fonctionaliter:
 - Inscription avec validation du mail
 
 - Edition du compte pour l'utilisateur avec changement de mot de pass
+
+- Changement du mot de passe par email
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
+

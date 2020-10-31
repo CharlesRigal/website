@@ -1,35 +1,39 @@
+# Ttkom
 
-# ttkom blog open source
+ttkom is a open source blog
 
-python3
-Django 3.1 
+## Use
 
-password cripted in argon2
+- python3
+- Django 3.1 
+- Argon2 lib
 
 
 ## Installation
 
 required
 
-Command ligne for installing dependencies:
-'''bash
+```bash
 python3 -m pip install django[argon2]
 python3 -m pip django-utils-six
+```
 
-## Fonctionaliter:
+## Functionality
 
-- Commenter et Liker un post
+- Comment and Like a post
 
-- Crée un post pour les admin
+- Create a post for admin
 
-- Connection Déconnection
+- Connection disconnection
 
-- Inscription avec validation du mail
+- Registration with validation of the email
 
 - Edition du compte pour l'utilisateur avec changement de mot de pass
 
 - Changement du mot de passe par email
 
+- user can edit they account and change password
+
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
-

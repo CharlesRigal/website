@@ -12,3 +12,5 @@ __pycache__/
 /httpRequests/
 .idea
 website.com/.vscode/launch.json
+virtualenv
+.vscode

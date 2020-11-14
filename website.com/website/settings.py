@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-import codepass
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = codepass.SECRET_KEY
+SECRET_KEY = "fdfghqfdjkghqf"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -30,7 +29,7 @@ DEBUG = True
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'rcserveur@gmail.com'
-EMAIL_HOST_PASSWORD = codepass.EMAIL_HOST_PASSWORD
+EMAIL_HOST_PASSWORD = "dfqgkjqshdgqhgq"
 EMAIL_PORT = 587
 
 if DEBUG:
@@ -43,6 +42,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'ttkom', #put in first for gain priority
+    'portfolio',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

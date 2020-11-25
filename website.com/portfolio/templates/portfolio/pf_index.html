@@ -1,4 +1,16 @@
 {% extends 'portfolio/base.html' %}
+{% load static %}
+{% block picture %}{% static "portfolio/img/bg_portfolio.jpg" %}{% endblock %}
+{% block head_title %}Je m'appelle Charles Rigal{% endblock %}
+{% block subheading %}Et voila mon Portfolio{% endblock %}
 {% block content %}
-Salut
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <h1 class="text-center">Presentation Rapide</h1>
+            
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -16,6 +16,7 @@ required
 ```bash
 python3 -m pip install django[argon2]
 python3 -m pip install django-utils-six
+python3 -m pip install Pillow
 ```
 
 ## Functionality

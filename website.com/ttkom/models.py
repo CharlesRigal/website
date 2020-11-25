@@ -33,6 +33,9 @@ class Post(models.Model):
     def __str__(self):
         return self.name
 
+    def save(self, *args, **kwargs):
+        
+        return super().save(*args, **kwargs)
 
 class Comment(models.Model):
     fk_author = models.ForeignKey(User, on_delete=models.DO_NOTHING)
